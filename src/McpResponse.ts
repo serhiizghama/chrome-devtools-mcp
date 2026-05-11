@@ -730,6 +730,7 @@ export class McpResponse implements Response {
       extensionServiceWorkers?: object[];
       extensionPages?: object[];
       errorMessage?: string;
+      geolocation?: {latitude: number; longitude: number};
     } = {};
 
     const response = [];
@@ -745,6 +746,14 @@ export class McpResponse implements Response {
       response.push(`Default navigation timeout set to ${timeout} ms`);
       structuredContent.networkConditions = networkConditions;
       structuredContent.navigationTimeout = timeout;
+    }
+
+    const geolocation = this.#page?.geolocation;
+    if (geolocation) {
+      response.push(
+        `Emulating geolocation: latitude=${geolocation.latitude}, longtitude=${geolocation.longitude}`,
+      );
+      structuredContent.geolocation = geolocation;
     }
 
     const viewport = this.#page?.viewport;
