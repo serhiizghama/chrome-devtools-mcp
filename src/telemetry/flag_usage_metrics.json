@@ -295,5 +295,13 @@
   {
     "name": "category_experimental_third_party",
     "flagType": "boolean"
+  },
+  {
+    "name": "blocklist_present",
+    "flagType": "boolean"
+  },
+  {
+    "name": "allowlist_present",
+    "flagType": "boolean"
   }
 ]

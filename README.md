@@ -615,6 +615,14 @@ The Chrome DevTools MCP server supports the following configuration option:
   Additional arguments for Chrome. Only applies when Chrome is launched by chrome-devtools-mcp.
   - **Type:** array
 
+- **`--blocklist`**
+  URL patterns to block access to. Uses standard URLPattern API. Cannot be used with --blocklist
+  - **Type:** array
+
+- **`--allowlist`**
+  URL patterns to allow access to (blocks everything else). Uses standard URLPattern API. Cannot be used with --blocklist.
+  - **Type:** array
+
 - **`--ignoreDefaultChromeArg`/ `--ignore-default-chrome-arg`**
   Explicitly disable default arguments for Chrome. Only applies when Chrome is launched by chrome-devtools-mcp.
   - **Type:** array
